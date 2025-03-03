@@ -86,7 +86,7 @@ toggleButton.MouseButton1Click:Connect(function()
 end)
 
 -- Tạo các tab
-local MainTab = Window:AddTab({ Title = "Script", Icon = "" })
+local MainTab = Window:AddTab({ Title = "Main", Icon = "" })
 local PlayerTab = Window:AddTab({ Title = "Script", Icon = "" })
 local IslandTab = Window:AddTab({ Title = "Script", Icon = "" })
 local OtherTab = Window:AddTab({ Title = "Script", Icon = "" })
@@ -94,6 +94,14 @@ local FruitTab = Window:AddTab({ Title = "Fruit", Icon = "" }) -- Tab Fruit mớ
 
 _G.Random_Auto = false -- Auto Random Fruit
 local selectedPlayer = nil -- Biến lưu player được chọn cho Spectate và Tween Player
+
+MainTab:AddButton({
+    Title = "Script ",
+    Description = "Farm nhanh quái",
+    Callback = function()
+        loadstring(game:HttpGet("link_script_auto_farm_của_bạn"))()
+    end
+})
 
 -- Find Fruit
 local fruitsESP = {}
