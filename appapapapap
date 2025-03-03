@@ -93,6 +93,7 @@ local OtherTab = Window:AddTab({ Title = "Script Auto Mirage", Icon = "" })
 local FruitTab = Window:AddTab({ Title = "Script Nhặt Trái", Icon = "" }) -- Tab Fruit mới
 local KaitanTab = Window:AddTab({ Title = "Script Kaitan", Icon = "" })
 local PremiumTab = Window:AddTab({ Title = "Script Maru/Banana", Icon = "" })
+local SpeedTab = Window:AddTab({ Title = "Script Chạy Nhanh", Icon = "" })
 
 _G.Random_Auto = false -- Auto Random Fruit
 local selectedPlayer = nil -- Biến lưu player được chọn cho Spectate và Tween Player
@@ -216,13 +217,20 @@ KaitanTab:AddButton({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/simple-hubs/contents/refs/heads/main/bloxfruit-kaitan-main.lua"))()
     end
 })
-PlayerTab:AddSlider("Speed Hack", {
-    Title = "Tốc độ di chuyển",
+SpeedTab:AddSlider("Speed Hack", {
+    Title = "Chạy Nhanh",
     Min = 16,
     Max = 500,
     Default = 16,
     Callback = function(value)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+    end
+})
+MainTab:AddButton({
+    Title = "Tuấn Anh IOS",
+    Description = "Script Của Chủ Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDzaiScript/ScriptAnhTuanIOS/refs/heads/main/ScriptTuanAnhIOS.lua"))()
     end
 })
 
@@ -308,7 +316,7 @@ end)
 -- Tab Fruit
 FruitTab:AddToggle("Find Fruit", {
     Title = "Nhặt Fruit",
-    Description = "Tự động nhặt Fruit + Esp fruit",
+    Description = "Nhặt Trái Trong Sever Nếu Có,ESP Fruit",
     Callback = function(Value)
         findFruitEnabled = Value
         if not findFruitEnabled then
@@ -324,9 +332,9 @@ FruitTab:AddToggle("Find Fruit", {
 })
 
 -- Auto Random Fruit Toggle
-FruitTab:AddToggle("Auto Random Fruit", {
-    Title = "Auto Random Fruit",
-    Description = "Bật/Tắt tự động mua trái ác quỷ ngẫu nhiên",
+FruitTab:AddToggle("Random Fruit", {
+    Title = "Random Trái",
+    Description = "Bật/Tắt mua trái ác quỷ ngẫu nhiên",
     Callback = function(state)
         _G.Random_Auto = state
         if state then
