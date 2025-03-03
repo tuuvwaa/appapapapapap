@@ -97,7 +97,7 @@ local MirageTab = Window:AddTab({ Title = "Script Auto Mirage", Icon = "" })
 _G.Random_Auto = false -- Auto Random Fruit
 local selectedPlayer = nil -- Biến lưu player được chọn cho Spectate và Tween Player
 
-local OtherTab = Window:AddTab({ Title = "Discode", Icon = "" })
+local DiscodeTab = Window:AddTab({ Title = "Discode", Icon = "" })
 OtherTab:AddButton({
     Title = "discord.gg/MkpDxJVTyb",
     Description = "Nhấn để copy link Discord",
