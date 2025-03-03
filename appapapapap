@@ -204,7 +204,7 @@ PremiumTab:AddButton({
 })
 PremiumTab:AddButton({
     Title = "Banana Hub",
-    Description = "Kèm Sẵn Key",
+    Description = "Kèm Sẵn Key,",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDzaiScript/AutoKick/refs/heads/main/TrollHaHa"))()
     end
@@ -216,11 +216,13 @@ KaitanTab:AddButton({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/simple-hubs/contents/refs/heads/main/bloxfruit-kaitan-main.lua"))()
     end
 })
-PlayerTab:AddButton({
-    Title = "Banana Hub",
-    Description = "Kèm Sẵn Key",
-    Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDzaiScript/AutoKick/refs/heads/main/TrollHaHa"))()
+PlayerTab:AddSlider("Speed Hack", {
+    Title = "Tốc độ di chuyển",
+    Min = 16,
+    Max = 500,
+    Default = 16,
+    Callback = function(value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
     end
 })
 
