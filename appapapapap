@@ -10,7 +10,7 @@ startupSound:Play() -- Phát âm thanh khi script chạy
 -- Tạo cửa sổ chính
 local Window = Library:CreateWindow{
     Title = "Tuấn Anh IOS",
-    SubTitle = "",
+    SubTitle = "discord.gg/MkpDxJVTyb",
     TabWidth = 160,
     Size = UDim2.fromOffset(1280, 860),
     Resize = true,
@@ -102,6 +102,35 @@ MainTab:AddButton({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))(Settings)
     end
 })
+MainTab:AddButton({
+    Title = "W-azure",
+    Description = "",
+    Callback = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
+    end
+})
+MainTab:AddButton({
+    Title = "Xero Hub",
+    Description = "",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Xero2409/XeroHub/refs/heads/main/main.lua"))()
+    end
+})
+MainTab:AddButton({
+    Title = "Bắp Red Hub",
+    Description = "",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/BapRed/main/BapRedHub"))()
+    end
+})
+MainTab:AddButton({
+    Title = "Trẩu Roblox",
+    Description = "",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/TrauHub/refs/heads/main/TrauV1"))()
+    end
+})
+
 
 -- Find Fruit
 local fruitsESP = {}
