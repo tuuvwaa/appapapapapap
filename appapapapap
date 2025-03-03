@@ -86,6 +86,7 @@ toggleButton.MouseButton1Click:Connect(function()
 end)
 
 -- Tạo các tab
+local OtherTab = Window:AddTab({ Title = "Discode", Icon = "" })
 local MainTab = Window:AddTab({ Title = "Script Mới Nhất", Icon = "" })
 local PlayerTab = Window:AddTab({ Title = "Script Auto Bounty", Icon = "" })
 local IslandTab = Window:AddTab({ Title = "Script Fix Lag Vip", Icon = "" })
@@ -97,6 +98,19 @@ local SpeedTab = Window:AddTab({ Title = "Script Chạy Nhanh", Icon = "" })
 
 _G.Random_Auto = false -- Auto Random Fruit
 local selectedPlayer = nil -- Biến lưu player được chọn cho Spectate và Tween Player
+local OtherTab = Window:AddTab({ Title = "Other", Icon = "" })
+OtherTab:AddButton({
+    Title = "Sao chép link Discord",
+    Description = "Nhấn để copy link Discord vào clipboard",
+    Callback = function()
+        setclipboard("https://discord.gg/MkpDxJVTyb")
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Thông báo",
+            Text = "Đã sao chép link Discord!",
+            Duration = 3
+        })
+    end
+})
 
 MainTab:AddButton({
     Title = "Redz Hub",
