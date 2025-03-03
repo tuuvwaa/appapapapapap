@@ -10,7 +10,7 @@ startupSound:Play() -- Phát âm thanh khi script chạy
 -- Tạo cửa sổ chính
 local Window = Library:CreateWindow{
     Title = "Tuấn Anh IOS",
-    SubTitle = "FB:Tuấn Anh",
+    SubTitle = "",
     TabWidth = 160,
     Size = UDim2.fromOffset(1280, 860),
     Resize = true,
@@ -94,28 +94,6 @@ local FruitTab = Window:AddTab({ Title = "Fruit", Icon = "" }) -- Tab Fruit mớ
 
 _G.Random_Auto = false -- Auto Random Fruit
 local selectedPlayer = nil -- Biến lưu player được chọn cho Spectate và Tween Player
--- Hàm Kill Aura
-local function killAuraLoop()
-    local monstersFolder = Workspace:FindFirstChild("Enemies")
-    while killAuraEnabled do
-        task.wait(1)
-        local char = LocalPlayer.Character
-        if not char then continue end
-        local hrp = char:FindFirstChild("HumanoidRootPart")
-        if not hrp or not monstersFolder then continue end
-
-        for _, monster in pairs(monstersFolder:GetChildren()) do
-            local hum = monster:FindFirstChild("Humanoid")
-            local mrp = monster:FindFirstChild("HumanoidRootPart")
-            if hum and mrp and hum.Health > 0 then
-                local distance = (mrp.Position - hrp.Position).Magnitude
-                if distance <= killAuraRange then
-                    hum.Health = 0
-                end
-            end
-        end
-    end
-end
 
 -- Find Fruit
 local fruitsESP = {}
