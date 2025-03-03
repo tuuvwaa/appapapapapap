@@ -225,7 +225,6 @@ MainTab:AddButton({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDzaiScript/ScriptAnhTuanIOS/refs/heads/main/ScriptTuanAnhIOS.lua"))()
     end
 })
-local DiscodeTab = Window:AddTab({ Title = "Discode", Icon = "" })
 OtherTab:AddButton({
     Title = "discord.gg/MkpDxJVTyb",
     Description = "Nhấn để copy link Discord",
