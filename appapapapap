@@ -26,7 +26,7 @@ screenGui.Parent = game.CoreGui
 -- Tạo nút (ImageButton)
 local toggleButton = Instance.new("ImageButton")
 toggleButton.Size = UDim2.new(0, 50, 0, 50) -- Kích thước nhỏ, hình vuông
-toggleButton.Position = UDim2.new(1, -60, 0, 10) -- Vị trí gần góc phải trên
+toggleButton.Position = UDim2.new(0, 10, 0, 10) -- Gần góc trái trên
 toggleButton.Image = "rbxassetid://112455697889846" -- Hình ảnh của nút
 toggleButton.BackgroundTransparency = 1 -- Không có nền
 toggleButton.Parent = screenGui
@@ -609,8 +609,8 @@ end
 
 -- Tab Main
 MainTab:AddToggle("Kill Aura", {
-    Title = "Golem và Quái tự chết",
-    Description = "Bật/Tắt Kill Aura",
+    Title = "Haki Bá Vương",
+    Description = "Bật/Tắt Haki Bá Vương",
     Callback = function(Value)
         killAuraEnabled = Value
         if killAuraEnabled then
@@ -621,7 +621,7 @@ MainTab:AddToggle("Kill Aura", {
 
 -- Tab Fruit
 FruitTab:AddToggle("Find Fruit", {
-    Title = "Find Fruit",
+    Title = "Nhặt Fruit",
     Description = "Tự động nhặt Fruit + Esp fruit",
     Callback = function(Value)
         findFruitEnabled = Value
