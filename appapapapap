@@ -86,7 +86,7 @@ toggleButton.MouseButton1Click:Connect(function()
 end)
 
 -- Tạo các tab
-local OtherTab = Window:AddTab({ Title = "Discode", Icon = "" })
+local DiscodeTab = Window:AddTab({ Title = "Discode", Icon = "" })
 local MainTab = Window:AddTab({ Title = "Script Mới Nhất", Icon = "" })
 local PlayerTab = Window:AddTab({ Title = "Script Auto Bounty", Icon = "" })
 local IslandTab = Window:AddTab({ Title = "Script Fix Lag Vip", Icon = "" })
@@ -98,19 +98,6 @@ local SpeedTab = Window:AddTab({ Title = "Script Chạy Nhanh", Icon = "" })
 
 _G.Random_Auto = false -- Auto Random Fruit
 local selectedPlayer = nil -- Biến lưu player được chọn cho Spectate và Tween Player
-local OtherTab = Window:AddTab({ Title = "Other", Icon = "" })
-OtherTab:AddButton({
-    Title = "Sao chép link Discord",
-    Description = "Nhấn để copy link Discord vào clipboard",
-    Callback = function()
-        setclipboard("https://discord.gg/MkpDxJVTyb")
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "Thông báo",
-            Text = "Đã sao chép link Discord!",
-            Duration = 3
-        })
-    end
-})
 
 MainTab:AddButton({
     Title = "Redz Hub",
@@ -219,7 +206,7 @@ PremiumTab:AddButton({
 })
 PremiumTab:AddButton({
     Title = "Banana Hub",
-    Description = "Kèm Sẵn Key,",
+    Description = "Kèm Sẵn Key",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDzaiScript/AutoKick/refs/heads/main/TrollHaHa"))()
     end
@@ -231,20 +218,24 @@ KaitanTab:AddButton({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/simple-hubs/contents/refs/heads/main/bloxfruit-kaitan-main.lua"))()
     end
 })
-SpeedTab:AddSlider("Speed Hack", {
-    Title = "Chạy Nhanh",
-    Min = 16,
-    Max = 500,
-    Default = 16,
-    Callback = function(value)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
-    end
-})
 MainTab:AddButton({
     Title = "Tuấn Anh IOS",
     Description = "Script Của Chủ Script",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/AnhDzaiScript/ScriptAnhTuanIOS/refs/heads/main/ScriptTuanAnhIOS.lua"))()
+    end
+})
+local DiscodeTab = Window:AddTab({ Title = "Discode", Icon = "" })
+OtherTab:AddButton({
+    Title = "discord.gg/MkpDxJVTyb",
+    Description = "Nhấn để copy link Discord",
+    Callback = function()
+        setclipboard("https://discord.gg/MkpDxJVTyb")
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Thông báo",
+            Text = "Đã sao chép link Discord!",
+            Duration = 3
+        })
     end
 })
 
